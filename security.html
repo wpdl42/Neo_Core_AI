@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="main_header.css" />
+    <link rel="stylesheet" href="security.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>NeoCore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Walter+Turncoat&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="menu-trigger" class="menu-checkbox" />
+    <input type="checkbox" id="icon-toggle" class="icon-checkbox" />
+
+    <div class="wrap">
+      <header class="header">
+        <div class="inner">
+          <h1 class="logo">
+            <a href="index.html">NeoCore</a>
+          </h1>
+
+          <nav class="menu icon_menu">
+            <ul>
+              <li><a href="index.html#team">팀 소개</a></li>
+              <li><a href="history.html">AI 역사</a></li>
+              <li><a href="security.html">AI 보안</a></li>
+              <li><a href="AI_in_everyday_life.html">AI 생활</a></li>
+            </ul>
+          </nav>
+
+          <nav class="icon_menu">
+            <label for="icon-toggle">
+              <i class="ri-moon-line icon-moon"></i>
+              <i class="ri-sun-line icon-sun"></i>
+            </label>
+
+            <label for="menu-trigger" class="hamburger-bar">
+              <i class="ri-menu-line"></i>
+            </label>
+          </nav>
+        </div>
+      </header>
+
+      <nav class="menu_small">
+        <div class="menu-control">
+          <label for="icon-toggle">
+            <i class="ri-moon-line icon-moon"></i>
+            <i class="ri-sun-line icon-sun"></i>
+          </label>
+
+          <label for="menu-trigger" class="close-btn">
+            <i class="ri-close-large-line"></i>
+          </label>
+        </div>
+
+        <ul>
+          <li><a href="index.html#team">팀 소개</a></li>
+          <li><a href="history.html">AI 역사</a></li>
+          <li><a href="security.html">AI 보안</a></li>
+          <li><a href="AI_in_everyday_life.html">AI 생활</a></li>
+        </ul>
+      </nav>
+
+      <label for="menu-trigger" class="menu-overlay"></label>
+
+      <main class="security-page">
+        <section class="hero">
+          <img src="img/security1.jpg" class="hero-img" />
+          <div class="hero-card">
+            <h1>AI Security</h1>
+            <p>
+              인공지능 시스템을 보호하고, 공격을 방어하기 위한 핵심 보안 기술
+            </p>
+          </div>
+        </section>
+
+        <section class="section intro">
+          <h2>🤖 AI 보안이란?</h2>
+          <img src="img/security2.jpg" class="section-img" />
+          <p>
+            AI 보안은 학습 데이터, 인공지능 모델, 서비스 시스템을 보호하여
+            악의적인 공격이나 오작동으로부터 안전하게 유지하는 기술입니다.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>⚔️ 주요 공격 유형</h2>
+          <div class="box">
+            <div class="card-container">
+              <div class="card">
+                <img src="img/security3.jpg" class="card-img" />
+                <h3>데이터 공격</h3>
+                <p>학습 데이터에 악성 데이터를 삽입하여 모델 성능을 왜곡</p>
+              </div>
+
+              <div class="card">
+                <img src="img/security4.jpg" class="card-img" />
+                <h3>적대적 공격</h3>
+                <p>입력을 미세하게 변형해 AI가 잘못 판단하도록 유도</p>
+              </div>
+
+              <div class="card">
+                <img src="img/security5.jpg" class="card-img" />
+                <h3>모델 탈취</h3>
+                <p>AI 모델을 복제하거나 내부 정보를 추출하는 공격</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>🛡️ 보안 대응 기술</h2>
+          <div class="box">
+            <div class="card-container">
+              <div class="card">
+                <img src="img/security6.jpg" class="card-img" />
+                <h3>데이터 검증</h3>
+                <p>이상 데이터와 악성 입력을 탐지하고 정제</p>
+              </div>
+
+              <div class="card">
+                <img src="img/security7.jpg" class="card-img" />
+                <h3>모델 방어</h3>
+                <p>적대적 공격에 강한 모델 구조와 학습 기법 적용</p>
+              </div>
+
+              <div class="card">
+                <img src="img/security8.jpg" class="card-img" />
+                <h3>접근 제어</h3>
+                <p>모델 및 시스템 접근 권한을 제한하여 오남용 방지</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>🚀 AI 보안의 미래</h2>
+          <div class="future-box">
+            <img src="img/security9.jpg" class="section-img" />
+            <p>
+              AI 기술이 발전할수록 보안 기술도 함께 발전해야 합니다. 앞으로는
+              자동화된 위협 탐지, 실시간 대응, 신뢰 가능한 AI 시스템 구축이 더
+              중요해질 것입니다.
+            </p>
+          </div>
+        </section>
+        <a
+          href=https://www.cloudflare.com/ko-kr/learning/ai/what-is-ai-security/
+          target="_blank"
+          class="security-link"
+        >
+          🔗 AI 보안 개념 자세히 보기
+        </a>
+      </main>
+
+      <footer>
+        Exploring the future with AI © 2026 NeoCore. All rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+:root {
+  --header-bg-color: white;
+  --header-ft-color: black;
+  --header-ft-background-color: rgb(243, 243, 243);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Bungee', sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: clamp(72px, 8vw, 89px); /* 헤더 높이 */
+  background-color: var(--header-bg-color);
+  position: fixed; /* 스크롤 내려도 상단에 고정 */
+  top: 0;
+  z-index: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+  box-shadow: 0 0 0 0.6px rgba(0, 0, 0, 0.1);
+}
+
+.logo,
+.icon_menu {
+  flex: 1; /* 남는 공간을 똑같이 나눠 가짐 */
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start; /* 로고는 왼쪽 정렬 */
+  font-family: 'Bungee', sans-serif;
+}
+
+.icon_menu {
+  display: flex;
+  justify-content: flex-end; /* 아이콘은 오른쪽 정렬 */
+}
+
+.menu {
+  flex: 2; /* 메뉴 영역을 더 넓게 설정 (중앙 확보) */
+  display: flex;
+  justify-content: center; /* 메뉴를 그 안에서 정중앙으로 */
+}
+
+.inner {
+  max-width: 90%; /* 최대 너비 제한 */
+  height: 100%;
+  margin: 0 auto; /* 좌우 가운데 정렬 */
+  display: flex; /* 요소들을 가로로 배치 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
+}
+
+.logo a {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 1.5vw + 10px, 24px);
+  font-weight: var(--fw5);
+  color: var(--header-ft-color);
+  transition: color 0.3s ease;
+}
+
+.menu ul {
+  display: flex; /* 리스트 항목을 가로로 */
+  gap: 5vw; /* 메뉴 사이 간격 */
+}
+
+.menu a {
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1vw + 5px, 17px);
+  font-weight: 400;
+  color: var(--header-ft-color);
+  transition: color 0.3s ease;
+  padding: 9px 15px 8px 15px;
+  border-radius: 40px;
+}
+
+.menu a:hover {
+  background-color: var(--header-ft-background-color);
+}
+
+.icon-checkbox:checked + .header {
+  --header-ft-background-color: rgb(51, 51, 51);
+}
+
+.icon_menu label[for='icon-toggle'] {
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex; /* 아이콘 크기에 딱 맞게 조절 */
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  cursor: pointer; /* 마우스 올리면 손가락 모양으로 */
+  width: 40px; /* 클릭 범위를 적당히 넓혀줌 */
+  height: 40px; /* 클릭 범위를 적당히 넓혀줌 */
+  /* border: 1px solid red;  <- 이 주석을 풀어서 범위를 눈으로 확인해보세요! */
+}
+
+.icon_menu label[for='icon-toggle']:hover {
+  background-color: var(--header-ft-background-color);
+}
+
+/* 아이콘 체크박스 */
+.icon-checkbox {
+  display: none;
+}
+
+.header .icon-sun {
+  display: none;
+}
+
+/* 색변경 */
+.icon-checkbox:checked ~ .wrap .header {
+  --header-ft-background-color: rgb(51, 51, 51);
+  --header-bg-color: #05080e; /* 어두운 배경 */
+  --header-ft-color: white; /* 밝은 글자 */
+}
+
+.icon-checkbox:checked ~ .wrap .header .icon-moon {
+  display: none;
+}
+
+.icon-checkbox:checked ~ .wrap .header .icon-sun {
+  display: inline-block;
+  color: white;
+}
+
+/************************ 화면 작아지면 나타나는 메뉴 ***************************/
+
+.menu_small {
+  display: none;
+}
+
+.icon_menu .hamburger-bar {
+  display: none;
+}
+
+.menu-checkbox,
+.hamburger-bar,
+.close-btn,
+.menu-overlay {
+  display: none;
+}
+
+@media (max-width: 1440px) {
+  .inner {
+    padding: 0 45px;
+  }
+}
+
+/* --- 기본 설정: PC에서는 숨기기 --- */
+
+/* --- 모바일 반응형 --- */
+@media (max-width: 1024px) {
+  .menu_small .icon-sun {
+    display: none;
+  }
+  .menu_small .icon-moon {
+    display: inline-block;
+  }
+
+  .icon-checkbox:checked ~ .menu_small .icon-moon {
+    display: none;
+  }
+
+  .icon-checkbox:checked ~ .menu_small .icon-sun {
+    display: inline-block;
+    color: white;
+  }
+
+  .close-btn {
+    display: inline-flex;
+    cursor: pointer;
+    color: var(--header-ft-color);
+  }
+
+  /* 1. 햄버거 아이콘 표시 */
+  .icon_menu .hamburger-bar {
+    display: inline-flex;
+    font-size: 36px;
+    cursor: pointer;
+    color: var(--header-ft-color);
+  }
+
+  .icon_menu label[for='icon-toggle'] {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu_small ul {
+    display: flex;
+    gap: 50px; /* 메뉴 항목 사이의 간격 */
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .menu_small ul li a {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: var(--fw7);
+    color: var(--header-ft-color);
+    padding: 6px 15px 9px 15px;
+    border-radius: 40px;
+  }
+
+  .menu_small a:hover {
+    background-color: var(--header-ft-background-color);
+  }
+
+  .menu_small {
+    position: relative;
+    padding: 120px 0 0 40px;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    /* 메뉴창 */
+    width: 45%;
+    height: 100vh;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+
+    transform: translateX(100%);
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .menu-checkbox:checked ~ .wrap .menu_small {
+    transform: translateX(0);
+  }
+
+  .menu-control {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+
+  .menu-control label {
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--header-ft-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+    opacity: 0;
+  }
+
+  .icon-checkbox:checked ~ .wrap .menu_small {
+    background-color: #05080e;
+    --header-ft-color: white;
+    --header-ft-background-color: rgb(51, 51, 51);
+  }
+
+  .menu-checkbox:checked ~ .wrap .menu-overlay {
+    display: inline;
+    opacity: 1;
+  }
+}
+
+/* 스크롤바 숨기기 추가 */
+::-webkit-scrollbar {
+  display: none;
+}

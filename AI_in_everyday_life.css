@@ -1,0 +1,193 @@
+.wrap {
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+:root {
+  --bg-main: #ffffff;
+  --bg-card: linear-gradient(to bottom, #ffffff, #ddddf4);
+  --text-main: #111827;
+  --text-sub: #4b5563;
+  --card-text: #374151;
+  --accent: rgb(0, 2, 132);
+  --table-header: #dbddea;
+  --table-hover: #e7e7ee;
+}
+
+.icon-checkbox:checked ~ .wrap {
+  --bg-main: #05080e;
+  --bg-card: linear-gradient(to bottom, #05070a, #24314d);
+  --text-main: #e5e7eb;
+  --text-sub: #9ca3af;
+  --card-text: #d1d5db;
+  --accent: #60a5fa;
+  --table-header: #1e293b;
+  --table-hover: #334155;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Bungee', sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Jua', sans-serif;
+  font-weight: 200;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Jua', sans-serif;
+}
+
+.cardbox {
+  background: var(--bg-card);
+}
+
+.AI_life {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.AI_life h1 {
+  text-align: center;
+  font-size: 3rem;
+  transition: 2s;
+}
+
+.AI_life:hover h1 {
+  cursor: pointer;
+  font-size: 65px;
+  color: var(--accent);
+}
+
+.AI_life p {
+  text-align: center;
+  color: var(--text-sub);
+}
+
+.cardbox {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  /*background: #ffffff;*/
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  gap: 30px;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.cardbox:hover {
+  transform: translateY(-5px);
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card {
+  flex: 1;
+}
+
+.card h2 {
+  margin-bottom: 15px; /*내용과 살짝 띄우기*/
+}
+
+.card p {
+  color: var(--card-text);
+  line-height: 1.5;
+}
+
+.textbox {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.box_title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--accent);
+}
+
+.tech_list {
+  margin: 0;
+  padding-left: 15px;
+  color: var(--card-text);
+}
+
+.tech_list {
+  list-style-type: disc;
+}
+
+.th2 {
+  margin-top: 200px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tp {
+  text-align: center;
+  color: var(--card-text);
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid rgb(176, 176, 189);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid var(--table-header);
+}
+
+th {
+  background-color: var(--table-header);
+  color: var(--card-text);
+}
+
+td a {
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+td a:hover {
+  color: var(--accent);
+}
+
+tbody tr:hover {
+  background-color: var(--table-hover);
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  margin-top: 100px;
+  color: var(--text-sub);
+}
+
+@media (max-width: 768px) {
+  .cardbox {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cardbox img {
+    width: 100%;
+    height: auto;
+  }
+}

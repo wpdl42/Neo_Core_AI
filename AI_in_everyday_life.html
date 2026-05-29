@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="main_header.css" />
+    <link rel="stylesheet" href="AI_in_everyday_life.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>NeoCore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Walter+Turncoat&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <input type="checkbox" id="menu-trigger" class="menu-checkbox" />
+    <input type="checkbox" id="icon-toggle" class="icon-checkbox" />
+    <div class="wrap">
+      <header class="header">
+        <div class="inner">
+          <h1 class="logo">
+            <a href="index.html">NeoCore</a>
+          </h1>
+          <nav class="menu icon_menu">
+            <ul>
+              <li><a href="index.html#team">팀 소개</a></li>
+              <li><a href="history.html">AI 역사</a></li>
+              <li>
+                <a href="security.html">AI 보안</a>
+              </li>
+              <li>
+                <a href="AI_in_everyday_life.html">AI 생활</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="icon_menu">
+            <label for="icon-toggle">
+              <i class="ri-moon-line icon-moon"></i>
+              <i class="ri-sun-line icon-sun"></i>
+            </label>
+
+            <label for="menu-trigger" class="hamburger-bar">
+              <i class="ri-menu-line"></i>
+            </label>
+          </nav>
+        </div>
+      </header>
+      <!-- 미니 메뉴 -->
+      <nav class="menu_small">
+        <div class="menu-control">
+          <label for="icon-toggle">
+            <i class="ri-moon-line icon-moon"></i>
+            <i class="ri-sun-line icon-sun"></i>
+          </label>
+
+          <label for="menu-trigger" class="close-btn">
+            <i class="ri-close-large-line"></i>
+          </label>
+        </div>
+
+        <ul>
+          <li>
+            <li><a href="index.html#team">팀 소개</a></li>
+          </li>
+          <li>
+            <a href="history.html">AI 역사</a>
+          </li>
+          <li>
+            <a href="security.html">AI 보안</a>
+          </li>
+          <li>
+            <a href="AI_in_everyday_life.html">AI 생활</a>
+          </li>
+        </ul>
+      </nav>
+      <label for="menu-trigger" class="menu-overlay"></label>
+
+      <main>
+        <div class="AI_life">
+          <h1>AI In Everyday Life</h1>
+          <p>AI 기술이 일상 속의 다양한 분야에서 어떻게 활용되는지 살펴보자</p>
+        </div>
+
+        <!--의료-->
+        <div class="cardbox">
+          <img src="img/medical.jpg" alt="Medical" />
+          <div class="card">
+            <h2>🧠의료🩻</h2>
+            <p>
+              이미지와 데이터를 분석하여 질병을 진단하고 치료 과정을 지원한다.
+            </p>
+
+            <div class="textbox">
+              <div class="box_title">사용 기술</div>
+              <ul class="tech_list">
+                <li>딥러닝 (Deep Learning)</li>
+                <li>컴퓨터 비전 (Computer Vision)</li>
+                <li>자연어 처리 (NLP)</li>
+              </ul>
+            </div>
+
+            <div class="textbox">
+              <div class="box_title">설명</div>
+              <p>
+                CT, MRI, X-ray 판독하여 질병을 빠르게 발견할 수 있고, 환자
+                데이터를 기반으로 맞춤형 치료를 제공한다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--자율주행-->
+        <div class="cardbox">
+          <img src="img/driving.jpg" alt="Autonomous Driving Technolodge" />
+          <div class="card">
+            <h2>🚗자율주행🚕</h2>
+            <p>도로 환경을 인식하고 안전한 주행을 위한 판단을 수행한다.</p>
+
+            <div class="textbox">
+              <div class="box_title">사용기술</div>
+              <ul class="tech_list">
+                <li>컴퓨터 비전 (Computer Vision)</li>
+                <li>강화 학습 (Reinforcement Learning)</li>
+                <li>센서 데이터 처리 (Sensor Fusion)</li>
+              </ul>
+            </div>
+
+            <div class="textbox">
+              <div class="box_title">설명</div>
+              <p>
+                카메라와 센서를 통해 도로 환경과 주변 상황을 실시간으로
+                인식하고, 최적의 경로와 행동을 결정하여 안전한 주행이 가능하게
+                한다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--금융-->
+        <div class="cardbox">
+          <img src="img/finance.jpg" alt="AI in Finance" />
+          <div class="card">
+            <h2>💰금융📊</h2>
+            <p>데이터를 분석하여 금융 서비스의 효율성과 안전성을 높인다.</p>
+
+            <div class="textbox">
+              <div class="box_title">사용기술</div>
+              <ul class="tech_list">
+                <li>머신 러닝 (Machine Learning)</li>
+                <li>데이터 마이닝 (Data Mining)</li>
+                <li>예측 모델 (Productive Modeling)</li>
+              </ul>
+            </div>
+
+            <div class="textbox">
+              <div class="box_title">설명</div>
+              <p>
+                머신 러닝을 통해 금융 데이터에서 고객의 소비 패턴을 분석하여
+                맞춤형 금융 서비스를 제공한다. 이상 거래를 탐지하여 사기나 위험
+                요소를 빠르게 파악하며, 또한 데이터를 기반으로 투자 예측과 신용
+                평가를 수행한다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--일상서비스-->
+        <div class="cardbox">
+          <img src="img/dailylife.png" alt="Everyday Services" />
+          <div class="card">
+            <h2>일상 서비스🤖💬</h2>
+            <p>사용자 맞춤형 서비스를 제공하여 일상 생활의 편의성을 높인다.</p>
+
+            <div class="textbox">
+              <div class="box_title">사용 기술</div>
+              <ul class="tech_list">
+                <li>추천 시스템 (Recommandation System)</li>
+                <li>자언어 처리 (NLP)</li>
+                <li>음성 인식 (Speech Recognition)</li>
+              </ul>
+            </div>
+
+            <div class="textbox">
+              <div class="box_title">설명</div>
+              <p>
+                추천 시스템을 통해 사용자의 취향에 맞는 콘텐츠를 제공한다.
+                챗봇이나 음성 비서가 사람의 말을 이해하고 응답한다. 이를 통해
+                정보 탐색과 일상 업무를 더 빠르고 편리하게 수행할 수 있다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="th2">📱실생활 속 가장 많이 사용하는 AI 기술📊</h2>
+        <p class="tp">자세히 알아보고 싶은 기술을 클릭해보세요!</p>
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>AI 기술</th>
+              <th>설명</th>
+              <th>사용처</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                <a
+                  href="https://www.ibm.com/kr-ko/think/topics/natural-language-processing"
+                  >자연어 처리 (NLP)</a
+                >
+              </td>
+              <td>사람의 언어를 이해하고 대화하는 기술</td>
+              <td>챗봇, 번역기, 음성비서, 검색</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                <a
+                  href="https://ko.wikipedia.org/wiki/%EC%B6%94%EC%B2%9C_%EC%8B%9C%EC%8A%A4%ED%85%9C"
+                  >추천 시스템</a
+                >
+              </td>
+              <td>사용자의 취향을 분석해 콘텐츠를 추천</td>
+              <td>유튜브, 넷플릭스, 쇼핑몰</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                <a
+                  href="https://namu.wiki/w/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EB%B9%84%EC%A0%84"
+                  >컴퓨터 비전</a
+                >
+              </td>
+              <td>이미지와 영상을 인식하고 분석</td>
+              <td>얼굴인식, CCTV, 의료 영상 분석</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                <a
+                  href="https://www.ibm.com/kr-ko/think/topics/speech-recognition"
+                  >음성 인식</a
+                >
+              </td>
+              <td>사람의 음성을 텍스트로 변환</td>
+              <td>Siri, 음성검색, 자동 자막</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>
+                <a
+                  href="https://www.ibm.com/kr-ko/think/topics/machine-learning"
+                  >머신러닝 (예측 분석)</a
+                >
+              </td>
+              <td>데이터를 기반으로 미래를 예측</td>
+              <td>주식, 날씨, 광고 추천</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+
+      <footer>
+        Exploring the future with AI © 2026 NeoCore. All rights reserved.
+      </footer>
+    </div>
+  </body>
+</html>

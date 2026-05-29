@@ -1,0 +1,132 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.social-media i:hover {
+  cursor: pointer;
+}
+.main-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+  min-height: 100vh;
+}
+
+.main-home a:hover {
+  cursor: pointer;
+}
+
+.main-logo {
+  font-size: clamp(100px, 15vw + 10px, 300px);
+}
+
+.main-p a {
+  font-size: clamp(20px, 5vw + 10px, 100px);
+}
+
+.icon-checkbox:checked ~ .wrap .main-home {
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.icon-checkbox:checked ~ .wrap .team-head {
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+.team-head {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 8%;
+}
+
+.team-head h1 {
+  font-size: clamp(45px, 4vw + 10px, 60px);
+}
+
+.team-container h1 {
+  font-size: 50px;
+}
+
+.team-container img {
+  height: 250px;
+  width: 250px;
+  filter: grayscale(1); /* 흑백 효과 */
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.team-container img:hover {
+  filter: grayscale(0);
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.team-container {
+  display: flex;
+  display: grid;
+  grid-template-areas: 'card-1 card-2 card-3 card-4';
+  width: 75%;
+  margin: auto;
+  padding-bottom: 100px;
+  gap: 50px;
+}
+
+.card-1 {
+  grid-area: card-1;
+}
+
+.card-2 {
+  grid-area: card-2;
+}
+.card-3 {
+  grid-area: card-3;
+}
+.card-4 {
+  grid-area: card-4;
+}
+
+.card {
+  text-align: center;
+}
+.info {
+  margin-top: 15px;
+}
+
+.team-container h3 {
+  font-size: 20px;
+  color: rgba(0, 255, 255, 0.5);
+}
+
+.social-media span i {
+  font-size: 30px;
+  margin-right: 5px;
+  margin-top: 15px;
+  color: #60a5fa;
+}
+
+.social-media i:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+@media (max-width: 1300px) {
+  .team-container {
+    grid-template-areas:
+      'card-1 card-2'
+      'card-3 card-4';
+  }
+}
+
+@media (max-width: 700px) {
+  .team-container {
+    grid-template-areas:
+      'card-1'
+      'card-2'
+      'card-3'
+      'card-4';
+  }
+}

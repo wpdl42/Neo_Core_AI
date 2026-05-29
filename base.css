@@ -1,0 +1,86 @@
+/*!!!!!!!!html 문서 안에 <head></head> 넣어주세요!!!!!!!!!!!
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Walter+Turncoat&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+*/
+
+/*제목용 멋진 폰트 (css에서 사용하심 됩니다...)
+  font-family: 'Bungee', sans-serif;
+*/
+
+/*본문용 귀여운 폰트 (css에서 사용하심 됩니다....)
+  font-family: 'Jua', sans-serif;
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Bungee", sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Jua", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: black;
+  background-color: white;
+}
+
+main {
+  flex-grow: 1;
+  padding-top: clamp(72px, 8vw, 84px);
+}
+
+strong {
+  font-weight: var(--fw8);
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "KakaoBig", sans-serif;
+}

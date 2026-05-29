@@ -1,0 +1,35 @@
+.wrap {
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0 ;
+  padding: 0;
+  
+}
+
+:root {
+  --bg-main: #ffffff;
+  --bg-card: linear-gradient(to bottom, #ffffff, #ddddf4);
+  --text-main: #111827;
+  --text-sub: #4b5563;
+  --card-text: #374151;
+  --accent: rgb(0, 2, 132);
+  --table-header: #dbddea;
+  --table-hover: #e7e7ee;
+}
+
+.icon-checkbox:checked ~ .wrap {
+  --bg-main: #05080e;
+  --bg-card: linear-gradient(to bottom, #05070a, #24314d);
+  --text-main: #e5e7eb;
+  --text-sub: #9ca3af;
+  --card-text: #d1d5db;
+  --accent: #60a5fa;
+  --table-header: #1e293b;
+  --table-hover: #334155;
+}
+
+
+.icon-checkbox:checked ~ .wrap  {
+  background: var(--bg-card); /* 체크 시 어두운 그라데이션으로 변경 */
+}
