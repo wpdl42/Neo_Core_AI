@@ -1,9 +1,9 @@
-// ===== 테마 토글 및 동기화 (다크 모드 / 라이트 모드) =====
+//=====테마 토글 및 동기화 (다크 모드 / 라이트 모드)=====
 function initTheme() {
   const toggle = document.getElementById('icon-toggle')
   if (!toggle) return
 
-  // 저장된 테마 불러오기 (기본값은 라이트 모드이나, index.html 등과 일관되도록 처리)
+  //저장된 테마 불러오기 (기본값은 라이트 모드)
   const savedTheme = localStorage.getItem('theme_v3')
   if (savedTheme === 'dark') {
     toggle.checked = true
@@ -11,7 +11,7 @@ function initTheme() {
     toggle.checked = false
   }
 
-  // 테마 상태 변경 시 저장
+  //테마 상태 변경 시 저장
   toggle.addEventListener('change', () => {
     localStorage.setItem('theme_v3', toggle.checked ? 'dark' : 'light')
   })

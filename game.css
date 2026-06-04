@@ -3,7 +3,6 @@
   --bg-body: #f8fafc;
   --bg-header: #ffffff;
   --bg-section: #f8fafc;
-  /* 배경색과 일치시켜 투명하고 깨끗하게 설정 */
   --bg-info: #ede9fe;
   --border-info: #c084fc;
   --shadow-info: none;
@@ -22,7 +21,6 @@
 
   --border-input: #3b82f6;
   --border-section: #e9d5ff;
-  /* 연한 보라색 경계선 */
   --shadow-section: rgba(0, 0, 0, 0.05);
   --shadow-btn: rgba(139, 92, 246, 0.2);
 
@@ -64,7 +62,6 @@
 
   --border-input: #7c3aed;
   --border-section: #2d1a49;
-  /* 톤을 매칭한 은은한 다크 퍼플 경계선 */
   --shadow-section: rgba(0, 0, 0, 0.3);
   --shadow-btn: rgba(124, 58, 237, 0.2);
 
@@ -72,9 +69,7 @@
   --toggle-text: #0b0910;
 
   --grad-title: linear-gradient(90deg, #a78bfa, #e9d5ff);
-  /* 소프트 라벤더 그라데이션 */
   --grad-active: linear-gradient(135deg, #7c3aed, #a78bfa);
-  /* 톤다운 바이올렛 그라데이션 */
 }
 
 /* ===== 기본 레이아웃 ===== */
@@ -121,6 +116,7 @@ body {
   font-weight: 900;
   background: var(--grad-title);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -198,6 +194,7 @@ section h2 {
   font-weight: 800;
   background: var(--grad-title);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
