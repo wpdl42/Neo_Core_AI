@@ -82,6 +82,7 @@ main {
 strong {
   font-weight: var(--fw8);
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -98,7 +99,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;          /* 큰 공간 확보 */
+  padding: 60px 20px;
   text-align: center;
   font-size: 0.95rem;
   font-weight: 500;
@@ -108,7 +109,7 @@ footer {
   width: 100%;
 }
 
-.icon-checkbox:checked ~ .wrap footer {
+.icon-checkbox:checked~.wrap footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-secondary, var(--text-sub, #9ca3af));
 }
