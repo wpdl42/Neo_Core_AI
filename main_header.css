@@ -12,9 +12,11 @@ h1 {
 
 .header {
   width: 100%;
-  height: clamp(72px, 8vw, 89px); /* 헤더 높이 */
+  height: clamp(72px, 8vw, 89px);
+  /* 헤더 높이 */
   background-color: var(--header-bg-color);
-  position: fixed; /* 스크롤 내려도 상단에 고정 */
+  position: fixed;
+  /* 스크롤 내려도 상단에 고정 */
   top: 0;
   z-index: 500;
   transition:
@@ -26,36 +28,45 @@ h1 {
 
 .logo,
 .icon_menu {
-  flex: 1; /* 남는 공간을 똑같이 나눠 가짐 */
+  flex: 1;
+  /* 남는 공간을 똑같이 나눠 가짐 */
 }
 
 .logo {
   display: flex;
-  justify-content: flex-start; /* 로고는 왼쪽 정렬 */
-  font-family: 'Bungee', sans-serif;
+  justify-content: flex-start;
+  /* 로고는 왼쪽 정렬 */
+  font-family: 'Orbitron', sans-serif;
 }
 
 .icon_menu {
   display: flex;
-  justify-content: flex-end; /* 아이콘은 오른쪽 정렬 */
+  justify-content: flex-end;
+  /* 아이콘은 오른쪽 정렬 */
 }
 
 .menu {
-  flex: 2; /* 메뉴 영역을 더 넓게 설정 (중앙 확보) */
+  flex: 2;
+  /* 메뉴 영역을 더 넓게 설정 (중앙 확보) */
   display: flex;
-  justify-content: center; /* 메뉴를 그 안에서 정중앙으로 */
+  justify-content: center;
+  /* 메뉴를 그 안에서 정중앙으로 */
 }
 
 .inner {
-  max-width: 90%; /* 최대 너비 제한 */
+  max-width: 90%;
+  /* 최대 너비 제한 */
   height: 100%;
-  margin: 0 auto; /* 좌우 가운데 정렬 */
-  display: flex; /* 요소들을 가로로 배치 */
-  align-items: center; /* 세로 방향 가운데 정렬 */
+  margin: 0 auto;
+  /* 좌우 가운데 정렬 */
+  display: flex;
+  /* 요소들을 가로로 배치 */
+  align-items: center;
+  /* 세로 방향 가운데 정렬 */
 }
 
 .logo a {
-  font-family: var(--font-heading);
+  font-family: 'Orbitron', sans-serif;
   font-size: clamp(22px, 1.5vw + 10px, 24px);
   font-weight: var(--fw5);
   color: var(--header-ft-color);
@@ -63,8 +74,10 @@ h1 {
 }
 
 .menu ul {
-  display: flex; /* 리스트 항목을 가로로 */
-  gap: 5vw; /* 메뉴 사이 간격 */
+  display: flex;
+  /* 리스트 항목을 가로로 */
+  gap: 5vw;
+  /* 메뉴 사이 간격 */
 }
 
 .menu a {
@@ -82,7 +95,7 @@ h1 {
   background-color: var(--header-ft-background-color);
 }
 
-.icon-checkbox:checked + .header {
+.icon-checkbox:checked+.header {
   --header-ft-background-color: rgb(51, 51, 51);
 }
 
@@ -90,12 +103,18 @@ h1 {
   font-size: 25px;
   padding: 10px;
   border-radius: 50%;
-  display: inline-flex; /* 아이콘 크기에 딱 맞게 조절 */
-  align-items: center; /* 세로 중앙 정렬 */
-  justify-content: center; /* 가로 중앙 정렬 */
-  cursor: pointer; /* 마우스 올리면 손가락 모양으로 */
-  width: 40px; /* 클릭 범위를 적당히 넓혀줌 */
-  height: 40px; /* 클릭 범위를 적당히 넓혀줌 */
+  display: inline-flex;
+  /* 아이콘 크기에 딱 맞게 조절 */
+  align-items: center;
+  /* 세로 중앙 정렬 */
+  justify-content: center;
+  /* 가로 중앙 정렬 */
+  cursor: pointer;
+  /* 마우스 올리면 손가락 모양으로 */
+  width: 40px;
+  /* 클릭 범위를 적당히 넓혀줌 */
+  height: 40px;
+  /* 클릭 범위를 적당히 넓혀줌 */
   /* border: 1px solid red;  <- 이 주석을 풀어서 범위를 눈으로 확인해보세요! */
 }
 
@@ -113,17 +132,19 @@ h1 {
 }
 
 /* 색변경 */
-.icon-checkbox:checked ~ .wrap .header {
+.icon-checkbox:checked~.wrap .header {
   --header-ft-background-color: rgb(51, 51, 51);
-  --header-bg-color: #05080e; /* 어두운 배경 */
-  --header-ft-color: white; /* 밝은 글자 */
+  --header-bg-color: #05080e;
+  /* 어두운 배경 */
+  --header-ft-color: white;
+  /* 밝은 글자 */
 }
 
-.icon-checkbox:checked ~ .wrap .header .icon-moon {
+.icon-checkbox:checked~.wrap .header .icon-moon {
   display: none;
 }
 
-.icon-checkbox:checked ~ .wrap .header .icon-sun {
+.icon-checkbox:checked~.wrap .header .icon-sun {
   display: inline-block;
   color: white;
 }
@@ -158,15 +179,16 @@ h1 {
   .menu_small .icon-sun {
     display: none;
   }
+
   .menu_small .icon-moon {
     display: inline-block;
   }
 
-  .icon-checkbox:checked ~ .menu_small .icon-moon {
+  .icon-checkbox:checked~.menu_small .icon-moon {
     display: none;
   }
 
-  .icon-checkbox:checked ~ .menu_small .icon-sun {
+  .icon-checkbox:checked~.menu_small .icon-sun {
     display: inline-block;
     color: white;
   }
@@ -195,7 +217,8 @@ h1 {
 
   .menu_small ul {
     display: flex;
-    gap: 50px; /* 메뉴 항목 사이의 간격 */
+    gap: 50px;
+    /* 메뉴 항목 사이의 간격 */
     padding: 0;
     flex-direction: column;
   }
@@ -235,7 +258,7 @@ h1 {
       color 0.3s ease;
   }
 
-  .menu-checkbox:checked ~ .wrap .menu_small {
+  .menu-checkbox:checked~.wrap .menu_small {
     transform: translateX(0);
   }
 
@@ -273,13 +296,13 @@ h1 {
     opacity: 0;
   }
 
-  .icon-checkbox:checked ~ .wrap .menu_small {
+  .icon-checkbox:checked~.wrap .menu_small {
     background-color: #05080e;
     --header-ft-color: white;
     --header-ft-background-color: rgb(51, 51, 51);
   }
 
-  .menu-checkbox:checked ~ .wrap .menu-overlay {
+  .menu-checkbox:checked~.wrap .menu-overlay {
     display: inline;
     opacity: 1;
   }

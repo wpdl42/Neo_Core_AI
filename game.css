@@ -1,0 +1,343 @@
+/* ===== 색상 변수 (라이트 모드 기본) ===== */
+.wrap {
+  --bg-body: #f8fafc;
+  --bg-header: #ffffff;
+  --bg-section: #f8fafc;
+  /* 배경색과 일치시켜 투명하고 깨끗하게 설정 */
+  --bg-info: #ede9fe;
+  --border-info: #c084fc;
+  --shadow-info: none;
+  --bg-cell: #ede9fe;
+  --bg-cell-hover: #ddd6fe;
+  --border-cell: #a78bfa;
+  --bg-nav-btn: #8b5cf6;
+  --bg-game-btn: #3b82f6;
+  --bg-input: #ffffff;
+
+  --text-primary: #1e293b;
+  --text-secondary: #1e1b4b;
+  --text-nav-btn: #ffffff;
+  --text-game-btn: #ffffff;
+  --text-result: #ec4899;
+
+  --border-input: #3b82f6;
+  --border-section: #e9d5ff;
+  /* 연한 보라색 경계선 */
+  --shadow-section: rgba(0, 0, 0, 0.05);
+  --shadow-btn: rgba(139, 92, 246, 0.2);
+
+  --toggle-bg: #0d1117;
+  --toggle-text: #ffffff;
+
+  --grad-title: linear-gradient(90deg, #8b5cf6, #ec4899);
+  --grad-active: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+/* ===== 색상 변수 (다크 모드) ===== */
+.icon-checkbox:checked~.wrap {
+  --bg-body: #0b0910;
+  /* 더 진하고 깊은 보라 회색 */
+  --bg-header: #100d17;
+  /* 헤더: 깊은 다크 바이올렛 */
+  --bg-section: #1b19288e;
+  /* 섹션: 배경색과 완벽히 일치시켜 일체감 부여 */
+  --bg-info: #1f1a2c;
+  /* AI원리: 배경보다 살짝 밝아 구분되는 보라 채우기 */
+  --border-info: #352b4a;
+  /* 테두리 */
+  --shadow-info: none;
+  --bg-cell: #1e1a28;
+  /* 틱택토 칸 기본색 */
+  --bg-cell-hover: #262036;
+  /* 틱택토 칸 마우스 오버 */
+  --border-cell: #352b4a;
+  /* 테두리 */
+  --bg-nav-btn: #8d6ac9;
+  --bg-game-btn: #8a68c5;
+  --bg-input: #0b0910;
+
+  --text-primary: #e2dcf0;
+  --text-secondary: #a89fc0;
+  --text-nav-btn: #ffffff;
+  --text-game-btn: #ffffff;
+  --text-result: #f472b6;
+
+  --border-input: #7c3aed;
+  --border-section: #2d1a49;
+  /* 톤을 매칭한 은은한 다크 퍼플 경계선 */
+  --shadow-section: rgba(0, 0, 0, 0.3);
+  --shadow-btn: rgba(124, 58, 237, 0.2);
+
+  --toggle-bg: #e2dcf0;
+  --toggle-text: #0b0910;
+
+  --grad-title: linear-gradient(90deg, #a78bfa, #e9d5ff);
+  /* 소프트 라벤더 그라데이션 */
+  --grad-active: linear-gradient(135deg, #7c3aed, #a78bfa);
+  /* 톤다운 바이올렛 그라데이션 */
+}
+
+/* ===== 기본 레이아웃 ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.wrap {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 게임 헤더 ===== */
+.game-header {
+  padding: 40px 20px 30px;
+  background-color: transparent;
+  border-bottom: none;
+  position: relative;
+}
+
+.game-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0 0 8px;
+  font-size: 2.4rem;
+  color: var(--text-primary);
+  letter-spacing: -1.5px;
+  font-weight: 900;
+  background: var(--grad-title);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-header p {
+  margin: 0 0 25px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ===== 네비게이션 ===== */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--bg-nav-btn);
+  color: var(--text-nav-btn);
+  box-shadow: 0 4px 14px var(--shadow-btn);
+}
+
+nav button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+nav button.active-nav {
+  background: var(--grad-active);
+  outline: 3px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+/* ===== 섹션 ===== */
+section {
+  display: none;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--bg-section);
+  border-radius: 28px;
+  border: none;
+  box-shadow: 0 20px 50px var(--shadow-section);
+}
+
+section.active {
+  display: block;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 800;
+  background: var(--grad-title);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* ===== 정보 박스 ===== */
+.info {
+  background-color: var(--bg-info);
+  padding: 24px 28px;
+  border-radius: 20px;
+  margin-bottom: 35px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: left;
+  border: 1.5px solid var(--border-info);
+  border-left: 6px solid var(--bg-nav-btn);
+  transition: all 0.3s ease;
+}
+
+.info b {
+  color: var(--bg-nav-btn);
+  font-size: 1.1rem;
+}
+
+/* ===== 틱택토 보드 ===== */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 15px;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.cell {
+  width: 120px;
+  height: 120px;
+  font-size: 50px;
+  border-radius: 20px;
+  border: 2.5px solid var(--border-cell);
+  cursor: pointer;
+  background-color: var(--bg-cell);
+  color: var(--text-primary);
+  font-weight: 900;
+  transition: all 0.2s ease;
+}
+
+.cell:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.cell:not(.cell-o):not(.cell-x):hover {
+  background-color: var(--bg-cell-hover);
+  border-color: var(--bg-nav-btn);
+}
+
+.cell-o {
+  background-color: #2b59c3 !important;
+  /* 소프트 스틸 블루 */
+  color: #ffffff !important;
+  border-color: #1e3f8a !important;
+}
+
+.cell-x {
+  background-color: #be2e68 !important;
+  /* 소프트 로즈/뮤트 핑크 */
+  color: #ffffff !important;
+  border-color: #8c1e4b !important;
+}
+
+/* ===== 입력 필드 ===== */
+input {
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 2px solid var(--border-input);
+  width: 240px;
+  font-size: 17px;
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  outline: none;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+input:focus {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== 게임 버튼 ===== */
+.game-btn {
+  padding: 14px 28px;
+  margin: 10px 8px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--bg-game-btn);
+  color: var(--text-game-btn);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+.game-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* ===== 결과 텍스트 ===== */
+.result {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--text-result);
+  min-height: 40px;
+  text-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 480px) {
+  .game-header h1 {
+    font-size: 2rem;
+  }
+
+  #themeToggle {
+    position: static;
+    margin: 15px auto 0;
+    display: inline-flex;
+  }
+
+  .board {
+    grid-template-columns: repeat(3, 95px);
+  }
+
+  .cell {
+    width: 95px;
+    height: 95px;
+    font-size: 40px;
+  }
+
+  section {
+    padding: 30px 20px;
+    margin: 20px 15px;
+  }
+}

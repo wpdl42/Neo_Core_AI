@@ -1,89 +1,142 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="main_header.css" />
-    <link rel="stylesheet" href="index-main.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <title>NeoCore</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Walter+Turncoat&family=Zen+Dots&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- header -->
-    <input type="checkbox" id="menu-trigger" class="menu-checkbox" />
-    <input type="checkbox" id="icon-toggle" class="icon-checkbox" />
-    <div class="wrap">
-      <header class="header">
-        <div class="inner">
-          <h1 class="logo">
-            <a href="index.html">NeoCore</a>
-          </h1>
-          <nav class="menu icon_menu">
-            <ul>
-              <li><a href="index.html#team">팀 소개</a></li>
-              <li><a href="information.html">AI 이론</a></li>
-              <li><a href="game.html">AI 게임</a></li>
-              <li><a href="ai_tip.html">AI 사용법</a></li>
-              <li><a href="ai_scan.html">AI 탐지기</a></li>
-            </ul>
-          </nav>
-          <nav class="icon_menu">
-            <label for="icon-toggle">
-              <i class="ri-moon-line icon-moon"></i>
-              <i class="ri-sun-line icon-sun"></i>
-            </label>
 
-            <label for="menu-trigger" class="hamburger-bar">
-              <i class="ri-menu-line"></i>
-            </label>
-          </nav>
-        </div>
-      </header>
-      <!-- 미니 메뉴 -->
-      <nav class="menu_small">
-        <div class="menu-control">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="main_header.css" />
+  <link rel="stylesheet" href="index-main.css" />
+  <link rel="stylesheet" href="game.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <title>NeoCore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Space+Grotesk:wght@300..700&family=Walter+Turncoat&family=Zen+Dots&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <!-- header -->
+  <input type="checkbox" id="menu-trigger" class="menu-checkbox" />
+  <input type="checkbox" id="icon-toggle" class="icon-checkbox" />
+  <div class="wrap">
+    <header class="header">
+      <div class="inner">
+        <h1 class="logo">
+          <a href="index.html">NeoCore</a>
+        </h1>
+        <nav class="menu icon_menu">
+          <ul>
+            <li><a href="index.html#team">팀 소개</a></li>
+            <li><a href="information.html">AI 이론</a></li>
+            <li><a href="game.html">AI 게임</a></li>
+            <li><a href="ai_tip.html">AI 사용법</a></li>
+            <li><a href="ai_scan.html">AI 탐지기</a></li>
+          </ul>
+        </nav>
+        <nav class="icon_menu">
           <label for="icon-toggle">
             <i class="ri-moon-line icon-moon"></i>
             <i class="ri-sun-line icon-sun"></i>
           </label>
 
-          <label for="menu-trigger" class="close-btn">
-            <i class="ri-close-large-line"></i>
+          <label for="menu-trigger" class="hamburger-bar">
+            <i class="ri-menu-line"></i>
           </label>
+        </nav>
+      </div>
+    </header>
+    <!-- 미니 메뉴 -->
+    <nav class="menu_small">
+      <div class="menu-control">
+        <label for="icon-toggle">
+          <i class="ri-moon-line icon-moon"></i>
+          <i class="ri-sun-line icon-sun"></i>
+        </label>
+
+        <label for="menu-trigger" class="close-btn">
+          <i class="ri-close-large-line"></i>
+        </label>
+      </div>
+
+      <ul>
+        <li><a href="index.html#team">팀 소개</a></li>
+        <li><a href="information.html">AI 이론</a></li>
+        <li><a href="game.html">AI 게임</a></li>
+        <li><a href="ai_tip.html">AI 사용법</a></li>
+        <li><a href="ai_scan.html">AI 탐지기</a></li>
+      </ul>
+    </nav>
+    <label for="menu-trigger" class="menu-overlay" style="height: 100%"></label>
+    <main>
+      <header class="game-header">
+        <h1>AI Mini Game Lab</h1>
+        <p>간단한 게임을 통해 AI의 판단 원리를 이해하는 페이지</p>
+
+        <nav>
+          <button id="nav-tic" onclick="showGame('tic')" class="active-nav">
+            틱택토
+          </button>
+          <button id="nav-number" onclick="showGame('number')">
+            숫자 맞추기
+          </button>
+        </nav>
+      </header>
+
+      <section id="tic" class="active">
+        <h2>틱택토 AI</h2>
+
+        <div class="info">
+          <b>AI 원리:</b><br />
+          AI는 먼저 자신이 이길 수 있는 칸을 찾습니다.<br />
+          이길 수 없다면 사용자가 이길 수 있는 칸을 막습니다.<br />
+          그다음에는 비어 있는 칸 중 하나를 선택합니다.
         </div>
 
-        <ul>
-              <li><a href="index.html#team">팀 소개</a></li>
-              <li><a href="information.html">AI 이론</a></li>
-              <li><a href="game.html">AI 게임</a></li>
-              <li><a href="ai_tip.html">AI 사용법</a></li>
-              <li><a href="ai_scan.html">AI 탐지기</a></li>
-        </ul>
-      </nav>
-      <label
-        for="menu-trigger"
-        class="menu-overlay"
-        style="height: 100%"
-      ></label>
-      /*******************************메인내용************************************/
-
-        </div>
+        <div class="board" id="board"></div>
+        <button class="game-btn" onclick="resetTicTacToe()">다시 시작</button>
+        <div class="result" id="ticResult"></div>
       </section>
-    </div>
-  </body>
+
+      <section id="number">
+        <h2>숫자 맞추기 AI</h2>
+
+        <div class="info">
+          <b>AI 원리:</b><br />
+          1부터 100 사이의 숫자를 랜덤으로 정합니다.<br />
+          사용자의 입력값과 정답을 비교해서 UP 또는 DOWN 힌트를 제공합니다.<br />
+          이는 조건 비교 알고리즘을 사용한 간단한 AI 방식입니다.
+        </div>
+
+        <p style="
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+          ">
+          1부터 100 사이 숫자를 맞춰보세요.
+        </p>
+        <input type="number" id="guessInput" placeholder="숫자 입력" />
+        <br />
+        <button class="game-btn" onclick="checkGuess()">확인</button>
+        <button class="game-btn" onclick="resetNumberGame()">다시 시작</button>
+        <div class="result" id="numberResult"></div>
+      </section>
+    </main>
+
+    <footer>
+      Exploring the future with AI © 2026 NeoCore. All rights reserved.
+    </footer>
+  </div>
+
+
+  </div>
+
+  <script src="theme.js"></script>
+</body>
+<script src="game.js"></script>
+
 </html>

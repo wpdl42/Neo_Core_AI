@@ -23,11 +23,12 @@ section {
 }
 
 .main-logo {
-  font-size: clamp(100px, 15vw + 10px, 300px);
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(90px, 12vw + 10px, 200px);
 }
 
 .main-p a {
-  font-size: clamp(20px, 5vw + 10px, 100px);
+  font-size: clamp(20px, 4vw + 10px, 45px);
 }
 
 .icon-checkbox:checked ~ .wrap .main-home {
@@ -44,6 +45,7 @@ section {
 }
 
 .team-head h1 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(45px, 4vw + 10px, 60px);
 }
 

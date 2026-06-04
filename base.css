@@ -3,18 +3,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Walter+Turncoat&family=Zen+Dots&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Space+Grotesk:wght@300..700&family=Walter+Turncoat&family=Zen+Dots&display=swap"
       rel="stylesheet"
     />
 */
 
-/*제목용 멋진 폰트 (css에서 사용하심 됩니다...)
-  font-family: 'Bungee', sans-serif;
-*/
+:root {
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-heading: 'Orbitron', sans-serif;
+}
 
-/*본문용 귀여운 폰트 (css에서 사용하심 됩니다....)
-  font-family: 'Jua', sans-serif;
-*/
+/* ===================================================
+   [ 사용된 폰트 안내 ]
+   
+   1. NeoCore 로고 & 헤더 폰트: 'Orbitron'
+      - 적용 방법: font-family: 'Orbitron', sans-serif;
+      - 변수 활용: font-family: var(--font-heading);
+      
+   2. 본문 텍스트용 폰트: 'Space Grotesk'
+      - 적용 방법: font-family: 'Space Grotesk', sans-serif;
+      - 변수 활용: font-family: var(--font-body);
+   =================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Jua", sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
@@ -83,4 +92,23 @@ h2,
 h3,
 h4 {
   font-family: "KakaoBig", sans-serif;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;          /* 큰 공간 확보 */
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary, var(--text-sub, #4b5563));
+  opacity: 0.7;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.icon-checkbox:checked ~ .wrap footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary, var(--text-sub, #9ca3af));
 }

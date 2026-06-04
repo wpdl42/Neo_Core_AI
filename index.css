@@ -2,9 +2,9 @@
   background: var(--bg-main);
   color: var(--text-main);
   min-height: 100vh;
-  margin: 0 ;
+  margin: 0;
   padding: 0;
-  
+
 }
 
 :root {
@@ -18,9 +18,9 @@
   --table-hover: #e7e7ee;
 }
 
-.icon-checkbox:checked ~ .wrap {
+.icon-checkbox:checked~.wrap {
   --bg-main: #05080e;
-  --bg-card: linear-gradient(to bottom, #05070a, #24314d);
+  --bg-card: linear-gradient(to bottom, #050408, #181427);
   --text-main: #e5e7eb;
   --text-sub: #9ca3af;
   --card-text: #d1d5db;
@@ -30,6 +30,7 @@
 }
 
 
-.icon-checkbox:checked ~ .wrap  {
-  background: var(--bg-card); /* 체크 시 어두운 그라데이션으로 변경 */
+.icon-checkbox:checked~.wrap {
+  background: var(--bg-main);
+  /* 체크 시 네비게이션 바와 동일한 어두운 단색 배경(#05080e)으로 변경 */
 }
