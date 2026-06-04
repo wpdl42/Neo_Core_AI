@@ -1,33 +1,91 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="main_header.css" />
   <link rel="stylesheet" href="index-main.css" />
+  <link rel="stylesheet" href="game.css" />
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <title>NeoCore</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Space+Grotesk:wght@300..700&family=Walter+Turncoat&family=Zen+Dots&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <title>NeoCore - AI Theory</title>
+
+  <style>
+    .theory-box {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .theory-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .theory-card {
+      background-color: var(--bg-info);
+      border: 1.5px solid var(--border-info);
+      border-left: 6px solid var(--bg-nav-btn);
+      border-radius: 22px;
+      padding: 24px;
+      text-align: left;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .theory-card h3 {
+      color: var(--bg-nav-btn);
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .theory-card p {
+      font-weight: 500;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      justify-content: center;
+    }
+
+    .keyword {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background-color: var(--bg-info);
+      border: 1.5px solid var(--border-info);
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- header -->
   <input type="checkbox" id="menu-trigger" class="menu-checkbox" />
   <input type="checkbox" id="icon-toggle" class="icon-checkbox" />
+
   <div class="wrap">
     <header class="header">
       <div class="inner">
         <h1 class="logo">
           <a href="index.html">NeoCore</a>
         </h1>
+
         <nav class="menu icon_menu">
           <ul>
             <li><a href="index.html#team">팀 소개</a></li>
@@ -37,6 +95,7 @@
             <li><a href="ai_scan.html">AI 탐지기</a></li>
           </ul>
         </nav>
+
         <nav class="icon_menu">
           <label for="icon-toggle">
             <i class="ri-moon-line icon-moon"></i>
@@ -49,7 +108,7 @@
         </nav>
       </div>
     </header>
-    <!-- 미니 메뉴 -->
+
     <nav class="menu_small">
       <div class="menu-control">
         <label for="icon-toggle">
@@ -70,14 +129,173 @@
         <li><a href="ai_scan.html">AI 탐지기</a></li>
       </ul>
     </nav>
+
     <label for="menu-trigger" class="menu-overlay" style="height: 100%"></label>
-    /*******************************메인내용************************************/
+
+    <main>
+      <header class="game-header">
+        <h1>AI Theory Lab</h1>
+        <p>AI 역사, AI 보안, 생활 속 AI, 생성형 AI를 하나의 페이지에서 정리합니다.</p>
+
+        <nav>
+          <button id="nav-history" class="theory-btn active-nav" onclick="showTheory('history')">AI 역사</button>
+          <button id="nav-security" class="theory-btn" onclick="showTheory('security')">AI 보안</button>
+          <button id="nav-life" class="theory-btn" onclick="showTheory('life')">생활 속 AI</button>
+          <button id="nav-generative" class="theory-btn" onclick="showTheory('generative')">생성형 AI</button>
+        </nav>
+      </header>
+
+      <!-- AI 역사 -->
+      <section id="history" class="theory-section active">
+        <div class="theory-box">
+          <h2>AI 역사</h2>
+
+          <div class="info">
+            <b>AI 역사 요약:</b><br />
+            AI는 인간처럼 사고하고 판단하는 기계를 만들기 위한 연구에서 시작되었습니다. 초기에는 단순 계산과 논리 추론 중심이었지만, 이후 머신러닝과 딥러닝이 발전하면서 현재는 생성형 AI까지 등장하게 되었습니다.
+          </div>
+
+          <div class="theory-card-grid">
+            <div class="theory-card">
+              <h3>초기 AI 연구</h3>
+              <p>1950년대부터 인공지능이라는 개념이 본격적으로 연구되기 시작했습니다. 초기 AI는 사람이 만든 규칙을 기반으로 문제를 해결하는 방식이었습니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>머신러닝의 발전</h3>
+              <p>머신러닝은 컴퓨터가 데이터를 통해 스스로 규칙을 학습하는 기술입니다. 이를 통해 추천 시스템, 이미지 인식, 음성 인식 같은 기능이 발전했습니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>딥러닝과 생성형 AI</h3>
+              <p>딥러닝은 인공신경망을 활용하여 복잡한 데이터를 처리합니다. 최근에는 글, 이미지, 코드 등을 생성하는 생성형 AI로 발전했습니다.</p>
+            </div>
+          </div>
+
+          <div class="keyword-list">
+            <span class="keyword">AI 역사</span>
+            <span class="keyword">머신러닝</span>
+            <span class="keyword">딥러닝</span>
+            <span class="keyword">생성형 AI</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI 보안 -->
+      <section id="security" class="theory-section">
+        <div class="theory-box">
+          <h2>AI 보안</h2>
+
+          <div class="info">
+            <b>AI 보안 요약:</b><br />
+            AI 보안은 인공지능 기술을 활용해 사이버 위협을 탐지하거나, 반대로 AI 시스템 자체를 공격으로부터 보호하는 분야입니다.
+          </div>
+
+          <div class="theory-card-grid">
+            <div class="theory-card">
+              <h3>보안 분야의 AI 활용</h3>
+              <p>AI는 악성코드 탐지, 피싱 메일 분석, 이상행위 탐지, 침입 탐지 시스템 등에 활용됩니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>AI를 공격하는 위협</h3>
+              <p>AI 모델은 데이터 오염, 적대적 공격, 모델 탈취, 개인정보 유출 같은 새로운 보안 위협에 노출될 수 있습니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>AI 보안의 중요성</h3>
+              <p>AI가 다양한 서비스에 적용될수록 AI 모델과 데이터의 안전성을 지키는 것이 매우 중요해지고 있습니다.</p>
+            </div>
+          </div>
+
+          <div class="keyword-list">
+            <span class="keyword">AI 보안</span>
+            <span class="keyword">피싱 탐지</span>
+            <span class="keyword">데이터 오염</span>
+            <span class="keyword">모델 보호</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 생활 속 AI -->
+      <section id="life" class="theory-section">
+        <div class="theory-box">
+          <h2>생활 속 AI</h2>
+
+          <div class="info">
+            <b>생활 속 AI 요약:</b><br />
+            생활 속 AI는 우리가 일상에서 사용하는 서비스에 자연스럽게 적용되어 있습니다. 추천 시스템, 음성 비서, 번역기, 자율주행 등이 대표적인 예입니다.
+          </div>
+
+          <div class="theory-card-grid">
+            <div class="theory-card">
+              <h3>추천 시스템</h3>
+              <p>유튜브, 넷플릭스, 쇼핑몰은 사용자의 관심사와 행동 데이터를 분석하여 맞춤형 콘텐츠나 상품을 추천합니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>음성 인식과 번역</h3>
+              <p>스마트폰 음성 비서, 자동 자막, 번역 서비스는 AI를 이용해 사람의 언어를 이해하고 처리합니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>스마트 서비스</h3>
+              <p>내비게이션, 얼굴 인식, 스마트홈, 자율주행 기술도 생활 속에서 AI가 활용되는 대표적인 사례입니다.</p>
+            </div>
+          </div>
+
+          <div class="keyword-list">
+            <span class="keyword">추천 알고리즘</span>
+            <span class="keyword">음성 인식</span>
+            <span class="keyword">번역 AI</span>
+            <span class="keyword">스마트홈</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 생성형 AI -->
+      <section id="generative" class="theory-section">
+        <div class="theory-box">
+          <h2>생성형 AI</h2>
+
+          <div class="info">
+            <b>생성형 AI 요약:</b><br />
+            생성형 AI는 기존 데이터를 학습하여 글, 이미지, 코드, 음악 등 새로운 콘텐츠를 만들어내는 인공지능 기술입니다.
+          </div>
+
+          <div class="theory-card-grid">
+            <div class="theory-card">
+              <h3>대표 서비스</h3>
+              <p>ChatGPT, Gemini, Copilot, Claude 같은 서비스는 질문 답변, 글쓰기, 번역, 코딩 보조 등에 활용됩니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>활용 분야</h3>
+              <p>보고서 작성, 발표 자료 구성, 코드 생성, 이미지 제작, 아이디어 정리, 학습 보조 등 다양한 분야에서 사용됩니다.</p>
+            </div>
+
+            <div class="theory-card">
+              <h3>주의할 점</h3>
+              <p>생성형 AI는 잘못된 정보를 사실처럼 말하는 환각 현상, 저작권 문제, 개인정보 유출 가능성 등의 한계가 있습니다.</p>
+            </div>
+          </div>
+
+          <div class="keyword-list">
+            <span class="keyword">ChatGPT</span>
+            <span class="keyword">Gemini</span>
+            <span class="keyword">Copilot</span>
+            <span class="keyword">환각 현상</span>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
       Exploring the future with AI © 2026 NeoCore. All rights reserved.
     </footer>
   </div>
-  <script src="theme.js"></script>
-</body>
 
+  <script src="theme.js"></script>
+  <script src="information.js"></script>
+</body>
 </html>
