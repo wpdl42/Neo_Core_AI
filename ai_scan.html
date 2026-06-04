@@ -8,14 +8,70 @@
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="main_header.css" />
   <link rel="stylesheet" href="index-main.css" />
+  <link rel="stylesheet" href="game.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <title>NeoCore</title>
+  <title>NeoCore - AI Scan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Space+Grotesk:wght@300..700&family=Walter+Turncoat&family=Zen+Dots&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    /* 탐지기 전용 추가 스타일 (game.css 기반) */
+    .scan-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .scan-input-area {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .scan-textarea {
+      width: 100%;
+      height: 120px;
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 2px solid var(--border-input);
+      background-color: var(--bg-input);
+      color: var(--text-primary);
+      font-size: 16px;
+      font-family: inherit;
+      resize: none;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .scan-textarea:focus {
+      border-color: var(--bg-nav-btn);
+      box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+    }
+    .loading-text {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--bg-nav-btn);
+      font-weight: 600;
+    }
+    .result-area {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 14px;
+      background-color: var(--bg-info);
+      border: 1.5px solid var(--border-info);
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #nav-scan-toxic.active-nav, #nav-scan-security.active-nav {
+      background: var(--grad-active);
+      outline: 3px solid var(--text-primary);
+      outline-offset: 3px;
+    }
+  </style>
 </head>
 
 <body>
@@ -63,7 +119,6 @@
       </div>
 
       <ul>
-        <li>
         <li><a href="index.html#team">팀 소개</a></li>
         <li><a href="information.html">AI 이론</a></li>
         <li><a href="game.html">AI 게임</a></li>
@@ -72,13 +127,91 @@
       </ul>
     </nav>
     <label for="menu-trigger" class="menu-overlay" style="height: 100%"></label>
-    /*******************************메인내용************************************/
+    
+    <main>
+      <header class="game-header">
+        <h1>AI Scanner Lab</h1>
+        <p>딥러닝 모델을 활용하여 콘텐츠의 안전성과 위협을 실시간으로 분석합니다.</p>
+
+        <nav>
+          <button id="nav-scan-toxic" onclick="showScan('toxic')" class="active-nav">
+            유해 콘텐츠 필터
+          </button>
+          <button id="nav-scan-security" onclick="showScan('security')">
+            지능형 위협 분석
+          </button>
+        </nav>
+      </header>
+
+      <!-- 유해 콘텐츠 필터 섹션 -->
+      <section id="toxic" class="active">
+        <h2>유해 콘텐츠 필터링 (Toxic-BERT)</h2>
+
+        <div class="info">
+          <b>AI 원리:</b><br />
+          Transformers.js의 <b>Toxic-BERT</b> 모델을 사용합니다.<br />
+          입력된 문장의 공격성, 욕설, 위협 등을 딥러닝으로 분석하여 유해성을 판단합니다.<br />
+          브라우저 내에서 직접 실행되므로 데이터가 외부로 전송되지 않아 안전합니다.
+        </div>
+
+        <div class="scan-input-area">
+          <textarea id="toxic-input" class="scan-textarea" placeholder="분석할 텍스트를 입력하세요... (영문 권장)"></textarea>
+          <div id="toxic-loading" class="loading-text">모델 로딩 중...</div>
+        </div>
+
+        <button class="game-btn" id="btn-toxic-analyze">AI 분석 시작</button>
+        
+        <div class="result-area">
+          <div class="result" id="toxic-result">분석 결과가 여기에 표시됩니다.</div>
+        </div>
+      </section>
+
+      <!-- 지능형 위협 분석 섹션 -->
+      <section id="security">
+        <h2>지능형 위협 분석 (DistilBERT)</h2>
+
+        <div class="info">
+          <b>AI 원리:</b><br />
+          <b>DistilBERT</b> 모델을 통해 문장의 '의도'와 '감정'을 분석합니다.<br />
+          사회공학적 공격(피싱, 사기 등)에서 나타나는 부정적이고 위협적인 문맥 패턴을 감지합니다.<br />
+          실시간 딥러닝 추론을 통해 메시지의 신뢰도를 측정합니다.
+        </div>
+
+        <div class="scan-input-area">
+          <textarea id="ai-security-input" class="scan-textarea" placeholder="의심스러운 메시지를 입력하세요... (영문 권장)"></textarea>
+          <div id="ai-security-loading" class="loading-text">모델 로딩 중...</div>
+        </div>
+
+        <button class="game-btn" id="btn-ai-security">실시간 AI 위협 분석</button>
+        
+        <div class="result-area">
+          <div class="result" id="ai-security-result">분석 결과가 여기에 표시됩니다.</div>
+        </div>
+      </section>
+    </main>
 
     <footer>
       Exploring the future with AI © 2026 NeoCore. All rights reserved.
     </footer>
   </div>
+
   <script src="theme.js"></script>
+  <script>
+    // 섹션 전환 함수 (game.js 방식 참고)
+    function showScan(type) {
+      document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.game-header nav button').forEach(b => b.classList.remove('active-nav'));
+      
+      if (type === 'toxic') {
+        document.getElementById('toxic').classList.add('active');
+        document.getElementById('nav-scan-toxic').classList.add('active-nav');
+      } else {
+        document.getElementById('security').classList.add('active');
+        document.getElementById('nav-scan-security').classList.add('active-nav');
+      }
+    }
+  </script>
+  <script type="module" src="ai_scan.js"></script>
 </body>
 
 </html>
