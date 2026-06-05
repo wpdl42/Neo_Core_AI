@@ -1,84 +1,203 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="main_header.css" />
+    <link rel="stylesheet" href="index-main.css" />
+    <link rel="stylesheet" href="game.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>NeoCore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Space+Grotesk:wght@300..700&family=Walter+Turncoat&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="main_header.css" />
-  <link rel="stylesheet" href="index-main.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <title>NeoCore</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Han+Sans&family=Bungee&family=Bungee+Spice&family=Coming+Soon&family=Doto:wght@100..900&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu&family=Jua&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Orbitron:wght@400..900&family=Rubik+Lines&family=Rubik+Mono+One&family=Science+Gothic:wght@100..900&family=Sixtyfour:SCAN@50&family=Space+Grotesk:wght@300..700&family=Walter+Turncoat&family=Zen+Dots&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
+  <body>
+    <!-- header -->
+    <input type="checkbox" id="menu-trigger" class="menu-checkbox" />
+    <input type="checkbox" id="icon-toggle" class="icon-checkbox" />
+    <div class="wrap">
+      <header class="header">
+        <div class="inner">
+          <h1 class="logo">
+            <a href="index.html">NeoCore</a>
+          </h1>
+          <nav class="menu icon_menu">
+            <ul>
+              <li><a href="index.html#team">팀 소개</a></li>
+              <li><a href="information.html">AI 이론</a></li>
+              <li><a href="game.html">AI 게임</a></li>
+              <li><a href="ai_tip.html">AI 사용법</a></li>
+              <li><a href="ai_scan.html">AI 탐지기</a></li>
+            </ul>
+          </nav>
+          <nav class="icon_menu">
+            <label for="icon-toggle">
+              <i class="ri-moon-line icon-moon"></i>
+              <i class="ri-sun-line icon-sun"></i>
+            </label>
 
-<body>
-  <!-- header -->
-  <input type="checkbox" id="menu-trigger" class="menu-checkbox" />
-  <input type="checkbox" id="icon-toggle" class="icon-checkbox" />
-  <div class="wrap">
-    <header class="header">
-      <div class="inner">
-        <h1 class="logo">
-          <a href="index.html">NeoCore</a>
-        </h1>
-        <nav class="menu icon_menu">
-          <ul>
-            <li><a href="index.html#team">팀 소개</a></li>
-            <li><a href="information.html">AI 이론</a></li>
-            <li><a href="game.html">AI 게임</a></li>
-            <li><a href="ai_tip.html">AI 사용법</a></li>
-            <li><a href="ai_scan.html">AI 탐지기</a></li>
-          </ul>
-        </nav>
-        <nav class="icon_menu">
+            <label for="menu-trigger" class="hamburger-bar">
+              <i class="ri-menu-line"></i>
+            </label>
+          </nav>
+        </div>
+      </header>
+      <!-- 미니 메뉴 -->
+      <nav class="menu_small">
+        <div class="menu-control">
           <label for="icon-toggle">
             <i class="ri-moon-line icon-moon"></i>
             <i class="ri-sun-line icon-sun"></i>
           </label>
 
-          <label for="menu-trigger" class="hamburger-bar">
-            <i class="ri-menu-line"></i>
+          <label for="menu-trigger" class="close-btn">
+            <i class="ri-close-large-line"></i>
           </label>
-        </nav>
-      </div>
-    </header>
-    <!-- 미니 메뉴 -->
-    <nav class="menu_small">
-      <div class="menu-control">
-        <label for="icon-toggle">
-          <i class="ri-moon-line icon-moon"></i>
-          <i class="ri-sun-line icon-sun"></i>
-        </label>
+        </div>
 
-        <label for="menu-trigger" class="close-btn">
-          <i class="ri-close-large-line"></i>
-        </label>
-      </div>
+        <ul>
+          <li></li>
+          <li><a href="index.html#team">팀 소개</a></li>
+          <li><a href="information.html">AI 이론</a></li>
+          <li><a href="game.html">AI 게임</a></li>
+          <li><a href="ai_tip.html">AI 사용법</a></li>
+          <li><a href="ai_scan.html">AI 탐지기</a></li>
+        </ul>
+      </nav>
+      <label
+        for="menu-trigger"
+        class="menu-overlay"
+        style="height: 100%"
+      ></label>
 
-      <ul>
-        <li>
-        <li><a href="index.html#team">팀 소개</a></li>
-        <li><a href="information.html">AI 이론</a></li>
-        <li><a href="game.html">AI 게임</a></li>
-        <li><a href="ai_tip.html">AI 사용법</a></li>
-        <li><a href="ai_scan.html">AI 탐지기</a></li>
-      </ul>
-    </nav>
-    <label for="menu-trigger" class="menu-overlay" style="height: 100%"></label>
-    /*******************************메인내용************************************/
+      <main>
+        <header class="game-header">
+          <h1>AI Tip Lab</h1>
+          <p>AI를 활용한 공부법을 소개하는 페이지 입니다.</p>
 
-    <footer>
-      Exploring the future with AI © 2026 NeoCore. All rights reserved.
-    </footer>
-  </div>
-  <script src="theme.js"></script>
-</body>
+          <nav>
+            <button id="nav-tip" onclick="showTip('tip')" class="active-nav">
+              AI 활용 공부법
+            </button>
+            <button id="nav-tip2" onclick="showTip2('tip2')">
+              AI 활용 주의법
+            </button>
+          </nav>
+        </header>
 
+        <section id="tip" class="active">
+          <h2>AI 활용 공부법</h2>
+
+          <div class="info" id="text-tip">
+            <b>1. "5세 아동 버전"으로 개념 이해하기</b><br />
+            어려운 논문이나 전공 서적 개념을 만났을 때 사용하면 직관적인 이해에
+            최고입니다.<br />
+            방법: "원하는 개념에 대해 5살 아이가 이해할 수 있도록 아주 쉬운
+            비유를 들어서 설명해 줘"라고 요청하세요. 복잡한 수식과 전문 용어를
+            빼고 본질만 파악할 수 있습니다.<br /><br />
+
+            <b>2. 셀프 테스트 및 퀴즈 출제</b><br />
+            눈으로 읽기만 하는 공부는 기억에 오래 남지 않습니다. AI에게 출제자
+            역할을 맡기세요.<br />
+            방법: "오늘 공부한 개념 요약본이야. 이걸 바탕으로 객관식 3문제와
+            서술형 1문제를 출제해 줘. 내가 답을 쓰면 채점하고 해설도 해줘"라고
+            단계별 퀴즈를 요청하세요.<br /><br />
+
+            <b>3. 반박 및 토론을 통한 심화 학습</b><br />
+            내 논리나 에세이의 허점을 찾고 싶을 때 유용합니다.<br />
+            방법: 내가 쓴 글이나 생각을 입력한 뒤, "내가 쓴 이 주장의 취약점이나
+            논리적 오류 3가지만 날카롭게 지적해 주고, 반박 의견을 제시해 줘"라고
+            요청하세요. 생각의 깊이가 달라집니다.<br /><br />
+
+            <b>4. 외국어 롤플레잉 및 첨삭</b><br />
+            비싼 돈 들지 않는 완벽한 회화 파트너가 됩니다.<br />
+            방법: "지금부터 너는 뉴욕의 카페 직원이고 나는 손님이야. 주문하는
+            상황극을 영어로 시작해 줘. 그리고 내 문장에 어색한 표현이 있으면
+            대화가 끝난 뒤에 교정해 줘"처럼 상황을 구체적으로 세팅하세요.<br /><br />
+
+            <b>5. 장문 요약 및 로드맵 짜기</b><br />
+            공부 분량이 너무 많아 엄두가 안 날 때 가이드를 잡기 좋습니다.<br />
+            방법: 긴 텍스트를 주고 "핵심 내용 3줄 요약해 줘"라고 하거나, "내가
+            한 달 뒤에 시험을 봐야 하는데, 하루 2시간씩 투자할 수 있어. 주차별
+            공부 로드맵과 실행 계획을 짜줘"라고 요청하세요.<br /><br />
+          </div>
+          <button
+            type="button"
+            class="game-btn"
+            onclick="copyContent('tip')"
+            style="margin-bottom: 15px; padding: 10px 20px"
+          >
+            <i class="ri-file-copy-line"></i> 공부법 내용 복사하기
+          </button>
+        </section>
+
+        <section id="tip2">
+          <h2>AI 활용 주의법</h2>
+
+          <div class="info" id="text-tip2">
+            <b>1. 할루시네이션(환각 현상) 의심하기</b><br />
+            AI는 모르는 것도 아주 당당하고 그럴싸하게 거짓말로 지어내서
+            대답합니다.<br />
+            대책: 공식적인 시험공부나 중요한 학술 자료를 공부할 때는 AI의 답변을
+            100% 믿지 말고, 반드시 교과서나 공인된 교재를 통해 교차 검증(팩트
+            체크)을 해야 합니다.<br /><br />
+
+            <b>2. 수동적인 공부(눈팅)에 가치 가두지 않기</b><br />
+            AI가 요약을 너무 잘해주다 보니, '내가 공부를 잘하고 있다'는 착각에
+            빠지기 쉽습니다. 뇌는 고통을 느껴야 기억합니다.<br />
+            대책: AI가 출력해 준 답변을 눈으로만 읽고 넘기지 말고, 반드시 내
+            언어로 다시 공책에 써보거나 백지 복습을 해야 진짜 내 지식이
+            됩니다.<br /><br />
+
+            <b>3. 프롬프트 맹신 금지 (질문이 구체적이어야 한다)</b><br />
+            "수학 잘하는 법 알려줘", "영어 가르쳐줘" 같은 뭉뚱그린 질문에는 AI도
+            인터넷 짜깁기 수준의 뻔한 대답밖에 못 합니다.<br />
+            대책: 나의 현재 수준, 공부 목적, 원하는 답변의 형태(표, 리스트,
+            대화체 등)를 구체적으로 한정 지어 질문해야 고품질의 답변을 얻을 수
+            있습니다.<br /><br />
+
+            <b>4. 개인정보 및 기밀 데이터 입력 금지</b><br />
+            AI 모델은 사용자가 입력한 데이터를 학습에 활용하는 경우가
+            많습니다.<br />
+            대책: 학교 제출용 미공개 논문, 기업 보안 문서, 본인의 주민번호나
+            주소 등 민감한 개인정보는 질문 창에 절대 입력하지 마세요.<br /><br />
+
+            <b>5. 최신 정보의 한계 인지하기</b><br />
+            AI 모델에 따라 학습된 데이터의 기준 시점이 다릅니다.<br />
+            대책: 실시간으로 바뀌는 법률, 최신 시사 상식, 트렌드 등을 공부할
+            때는 검색 기능이 켜져 있는지 확인하거나, AI보다는 최신 뉴스 및 공식
+            기관의 자료를 우선시해야 합니다.
+          </div>
+          <button
+            type="button"
+            class="game-btn"
+            onclick="copyContent('tip2')"
+            style="margin-bottom: 15px; padding: 10px 20px"
+          >
+            <i class="ri-file-copy-line"></i> 주의법 내용 복사하기
+          </button>
+        </section>
+      </main>
+
+      <footer>
+        Exploring the future with AI © 2026 NeoCore. All rights reserved.
+      </footer>
+    </div>
+    <script src="theme.js"></script>
+    <script src="ai_tip.js"></script>
+  </body>
 </html>
